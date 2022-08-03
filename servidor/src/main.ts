@@ -14,7 +14,7 @@ app.post('/api/pdf', (req: Request, res: Response): void => {
   const body = req.body.pdf;
   const data = body.replace('data:application/pdf;base64,', '').trim();
   const buffer = Buffer.from(data, 'base64');
-  writeFile('pdf.pdf', buffer, 'binary');
+  writeFile('pdf.pdf', buffer, { encoding: 'binary' });
   res.send('Ok');
 });
 
