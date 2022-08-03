@@ -29,8 +29,8 @@ inputCargarPdf.addEventListener('input', (evento) => {
   // Escuchar evento de "load"
   lectorDeArchivos.addEventListener('load', alCargar);
   // Leer archivo
-  lectorDeArchivos.readAsDataURL(archivo);
+  // lectorDeArchivos.readAsDataURL(archivo);
   // para obtener un DataURL del archivo
-  // O lectorDeArchivos.readAsBinaryString(archivo);
+  lectorDeArchivos.readAsBinaryString(archivo);
   // para obtener los datos binarios
 });
