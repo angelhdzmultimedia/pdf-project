@@ -4,7 +4,7 @@ import { writeFile } from 'node:fs/promises';
 const app: Application = express();
 app.use(
   cors({
-    origin: 'https://node-wnu1a6--5173.local.webcontainer.io',
+    origin: '*',
   })
 );
 app.use(express.json({ limit: '50mb' }));
@@ -12,6 +12,7 @@ app.use(express.json({ limit: '50mb' }));
 app.post('/api/pdf', (req: Request, res: Response): void => {
   //console.log(`Datos PDF: ${req.body.pdf}`);
   writeFile('pdf.pdf', req.body.pdf);
+  res.send('Ok');
 });
 
 app.get('/', (req, res) => {

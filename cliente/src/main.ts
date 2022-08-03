@@ -21,6 +21,7 @@ inputCargarPdf.addEventListener('input', (evento) => {
       headers: {
         'Content-Type': 'application/json',
       },
+      mode: 'cors',
       method: 'POST',
       body: JSON.stringify({
         pdf: datos,
