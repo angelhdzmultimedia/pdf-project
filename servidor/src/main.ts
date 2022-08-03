@@ -12,7 +12,7 @@ app.use(express.json({ limit: '50mb' }));
 app.post('/api/pdf', (req: Request, res: Response): void => {
   //console.log(`Datos PDF: ${req.body.pdf}`);
   const body = req.body.pdf;
-  const data = body.replace('data:application/pdf;base64,', '');
+  const data = body.replace('data:application/pdf;base64,', '').trim();
   const buffer = Buffer.from(data, 'base64');
   writeFile('pdf.pdf', buffer);
   res.send('Ok');
