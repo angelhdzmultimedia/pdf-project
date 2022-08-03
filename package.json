@@ -1,0 +1,10 @@
+{
+  "name": "node-starter",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "concurrently \"cd servidor && npm i && npm run dev\" \"cd cliente && npm i && npm run dev\""
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
