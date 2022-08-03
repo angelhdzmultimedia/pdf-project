@@ -19,7 +19,7 @@ inputCargarPdf.addEventListener('input', (evento) => {
     // haciendo una peticion HTTP post aqui con fetch()
     fetch('https://node-wnu1a6--5001.local.webcontainer.io/api/pdf', {
       headers: {
-        'Content-Type': 'application/pdf;base64',
+        'Content-Type': 'application/octet-stream',
       },
       mode: 'cors',
       method: 'POST',
