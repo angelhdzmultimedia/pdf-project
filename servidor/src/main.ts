@@ -2,7 +2,11 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { writeFile } from 'node:fs/promises';
 const app: Application = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://node-wnu1a6--5173.local.webcontainer.io',
+  })
+);
 app.use(express.json({ limit: '50mb' }));
 
 app.post('/api/pdf', (req: Request, res: Response): void => {

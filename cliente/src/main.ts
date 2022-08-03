@@ -17,7 +17,7 @@ inputCargarPdf.addEventListener('input', (evento) => {
 
     // Ahora puedes enviar los datos al controlador de Spring
     // haciendo una peticion HTTP post aqui con fetch()
-    fetch('https://localhost:5001/api/pdf', {
+    fetch('https://node-wnu1a6--5001.local.webcontainer.io/api/pdf', {
       headers: {
         'Content-Type': 'application/json',
       },
