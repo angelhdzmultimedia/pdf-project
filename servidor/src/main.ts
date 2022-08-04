@@ -12,8 +12,11 @@ app.use(express.raw({ limit: '50mb' }));
 app.post('/api/pdf', (req: Request, res: Response): void => {
   //console.log(`Datos PDF: ${req.body.pdf}`);
   const body = req.body;
-  writeFile(`pdf_${Date.now()}.pdf`, body, { encoding: 'binary' });
-  res.send('Ok');
+  const data = body.toString().replace('data:application/pdf;base64,', '');
+  const buffer = Buffer.from(data, 'base64');
+  writeFile(`pdf_${Date.now()}.pdf`, buffer, { encoding: 'binary' });
+  res.setHeader('Content-Type', 'application/octet-stream');
+  res.send(buffer.toString('utf-8'));
 });
 
 app.get('/', (req, res) => {
