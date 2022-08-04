@@ -5,12 +5,14 @@ const $ = (sel) => document.querySelector(sel);
 
 const inputCargarPdf = $('#input-cargar-pdf');
 const textAreaRespuestaPdf = $('#textarea-respuesta-pdf');
+
 inputCargarPdf.addEventListener('input', (evento) => {
   // Archivo seleccionado.
   // Obtener archivo
   const archivo = evento.target.files[0];
   // Crear instancia de Lector de Archivos
   const lectorDeArchivos = new FileReader();
+  
   async function alCargar(evento) {
     // Evento de "load" despachado.
     // Leer datos
